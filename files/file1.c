@@ -10,7 +10,7 @@ int main(){
 	char str[100];
 	while(fgets(str, 100, fin) != NULL){
 		printf("%s", str);
-		len = strlen(str) - 1; //без /0
+		len = strlen(str); 
 		if (len > max) max = len;
 	}
 	printf("%d", max);
