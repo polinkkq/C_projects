@@ -9,8 +9,8 @@ int main(){
 		sqlite3_close(db);
 		return 1;
 	}
-	char * sql = "DROP TABLE IF EXIST people;"
-				"CREATE TABLE people(id_people INTEGER PRIMARY KEY AUTO_INCREMENT, name TEXT, age INTEGER);"
+	char * sql = "DROP TABLE IF EXISTS people;"
+				"CREATE TABLE people(id_people INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER);"
 				"INSERT INTO people(name, age) VALUES ('Tom', 38)";
 	rc = sqlite3_exec(db, sql, 0, 0, &err_msg);
 	if (rc != SQLITE_OK )
